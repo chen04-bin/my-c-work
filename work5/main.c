@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 int main()
@@ -26,7 +26,7 @@ int main()
                 printf("%d ",i);
         printf("\n");
     }
-}*/
+}
 #include <stdio.h>
 #include <stdlib.h>
 
