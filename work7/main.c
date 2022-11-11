@@ -25,7 +25,7 @@ int main()
         printf("%.4f\n",e);
     }
 }
-//Çóe
+//æ±‚e
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -49,4 +49,4 @@ int main()
         printf("%.10lf\n",pai);
     }
 }
-//Çópai
+//æ±‚pai
