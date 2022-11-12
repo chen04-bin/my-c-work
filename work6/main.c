@@ -49,3 +49,52 @@ int main()
     return 0;
 }
 
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int a[10][10],sum,i,j,r,c,k,t,f;
+    while(scanf("%d%d%d",&r,&c,&k)!=-1)
+    {
+        for(i=0;i<r;i++)
+        {
+            for(j=0; j<c; j++)
+            {
+                scanf("%d",&a[i][j]);
+            }
+        }
+        for(i=0;i<r;i++)          //计算每个学生的总成绩
+        {
+            sum=0;
+            for(j=0;j<c;j++)
+                sum+=a[i][j];
+            a[i][c]=sum;
+        }
+        k=k-1;
+        for(i=0;i<r-1;i++)
+        {
+            for(j=i+1;j<r;j++)
+            {
+                if(a[i][k]<a[j][k])//对第k列的元素比较，如果第i个元素的值小于第j个元素的值，第i行和第j行值全部互换
+                {
+                    for(r=0;f<c+1;f++)
+                    {
+                        t=a[i][f];
+                        a[i][f]=a[j][f];
+                        a[j][f]=t;
+                    }
+                }
+            }
+        }
+        for(i=0;i<r;i++)
+        {
+            printf("%d ",i+1);
+            for(j=0;j<=c;j++)
+            {
+                printf("%d ",a[i][j]);
+            }
+            printf("\n");
+        }
+    }
+    return 0;
+}
