@@ -43,6 +43,8 @@ int main()
         for(i=1;i<DAY.month;i++)
             sum_day=sum_day+mOnth[i];                                   //满足整月的天数
         n=(DAY.year%4==0&&DAY.year%100!=0)||(DAY.year%4==0&&DAY.year%400==0);
+        if(DAY.month==2&&DAY.day==29)
+            n=0;
         sum_day=sum_day+DAY.day+n;
         if(sum_day%5==0||sum_day%5==4)
             printf("晒网\n");
@@ -51,6 +53,40 @@ int main()
     }
     return 0;
 }
+
+
+/*int main()
+{
+    struct Date x;
+    int f,s,i,y[13]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+    while(scanf("%d-%d-%d",&x.year,&x.month,&x.day)!=-1)
+    {
+        s=0;
+        for(i=1;i<x.year;i++)//统计公元1年到前一年共有多少天
+        {
+            if((i%4==0&&i%100!=0)||(i%4==0 && i%400==0))
+                f=1;
+            else
+                f=0;
+            s=s+365+f;
+        }
+        f=0;
+        if((x.year%4==0 && x.year%100!=0)||(x.year%4==0 && x.year%400==0))
+              f=1;
+        for(i=1;i<x.month;i++)
+            s=s+y[i];
+        if(x.month>3)//如果是闰年且3月以后，统计天数的时候需要将2月份有29天进行累加
+          s=s+x.day+f;
+        else
+          s=s+x.day;
+
+        if(s%5==0 || s%5==4)
+            printf("晒网\n");
+        else
+            printf("打鱼\n");
+    }
+	return 0;
+}*/
 
 
 
